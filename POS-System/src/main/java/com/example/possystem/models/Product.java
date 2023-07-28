@@ -26,7 +26,11 @@ public class Product {
     }
 
     public void setProductId(int productId) {
-        this.productId = productId;
+        if(productId > 0) {
+            this.productId = productId;
+        } else {
+            throw new IllegalArgumentException("Product ID should be more than 0");
+        }
     }
 
     public String getProductName() {
@@ -34,7 +38,11 @@ public class Product {
     }
 
     public void setProductName(String productName) {
-        this.productName = productName;
+        if(!productName.trim().isBlank() && productName.trim().length() > 1) {
+            this.productName = productName;
+        } else {
+            throw new IllegalArgumentException("Product name cannot blank and should contain more than 1 characters");
+        }
     }
 
     public double getProductPrice() {
@@ -42,7 +50,11 @@ public class Product {
     }
 
     public void setProductPrice(double productPrice) {
-        this.productPrice = productPrice;
+        if(productPrice > 0.0) {
+            this.productPrice = productPrice;
+        } else {
+            throw new IllegalArgumentException("Product price should be more than 0$");
+        }
     }
 
     public float getProductWeight() {
@@ -50,7 +62,11 @@ public class Product {
     }
 
     public void setProductWeight(float productWeight) {
-        this.productWeight = productWeight;
+        if(productWeight > 0.0) {
+            this.productWeight = productWeight;
+        } else {
+            throw new IllegalArgumentException("Product weight should be more than 0");
+        }
     }
 
     public String getProductManufacture() {
@@ -58,7 +74,11 @@ public class Product {
     }
 
     public void setProductManufacture(String productManufacture) {
-        this.productManufacture = productManufacture;
+        if(!productManufacture.trim().isBlank() && productManufacture.trim().length() > 1) {
+            this.productManufacture = productManufacture;
+        } else {
+            throw new IllegalArgumentException("Product Manufacture cannot be blank and should contain at lease 2 characters");
+        }
     }
 
     public double getQuantity() {
@@ -66,7 +86,11 @@ public class Product {
     }
 
     public void setQuantity(double quantity) {
-        this.quantity = quantity;
+        if(quantity >= 1) {
+            this.quantity = quantity;
+        } else {
+            throw new IllegalArgumentException("Quantity should at least 1");
+        }
     }
 
     public int getCategoryId() {
@@ -74,6 +98,10 @@ public class Product {
     }
 
     public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
+        if(categoryId > 0) {
+            this.categoryId = categoryId;
+        } else {
+            throw new IllegalArgumentException("Category ID should be more than 0");
+        }
     }
 }
