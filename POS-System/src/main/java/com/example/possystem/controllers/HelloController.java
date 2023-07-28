@@ -1,4 +1,4 @@
-package com.example.possystem;
+package com.example.possystem.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
