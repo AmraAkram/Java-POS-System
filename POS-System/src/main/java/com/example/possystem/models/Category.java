@@ -18,7 +18,12 @@ public class Category {
 
     // Set Category ID
     public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
+        if (categoryId > 0){
+            this.categoryId = categoryId;
+        }
+        else {
+            throw new IllegalArgumentException("The category ID should be greater than 0");
+        }
     }
 
     // Get Category Name
@@ -28,6 +33,11 @@ public class Category {
 
     // Set Category Name
     public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
+        if (categoryName.length() > 1 && !categoryName.isBlank()) {
+            this.categoryName = categoryName;
+        }
+        else {
+            throw new IllegalArgumentException("the category name cannot be empty and must contain characters more 1");
+        }
     }
 }
