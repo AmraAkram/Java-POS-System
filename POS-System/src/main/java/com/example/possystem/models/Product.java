@@ -1,5 +1,7 @@
 package com.example.possystem.models;
 
+import com.example.possystem.utilities.DBUtility;
+
 public class Product {
     private int productId;
     private String productName;
@@ -33,6 +35,7 @@ public class Product {
     public void setProductId(int productId) {
         if(Integer.toString(productId).length() == 8 && Integer.toString(productId).matches("[^0]{7}[0-9]{8}")) {
             this.productId = productId;
+
         } else {
             throw new IllegalArgumentException("Product ID should have 8 digits");
         }
