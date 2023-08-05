@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ProductTest {
-    Product product;
 
+    Product product;
     @BeforeEach
     void setUp() {
         product = new Product(125, "Apple", 2.49, 1, "Canadian Farmers", 56, 256);
@@ -15,7 +15,6 @@ class ProductTest {
 
     @Test
     void setProductId() {
-        product.setProductId();
     }
 
     @Test
