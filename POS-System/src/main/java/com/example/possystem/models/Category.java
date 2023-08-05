@@ -5,7 +5,11 @@ public class Category {
     private int categoryId;
     private String categoryName;
 
-    // Constructor
+    /**
+     *
+     * @param categoryId
+     * @param categoryName
+     */
     public Category(int categoryId, String categoryName) {
         setCategoryId(categoryId);
         setCategoryName( categoryName);
@@ -16,7 +20,10 @@ public class Category {
         return categoryId;
     }
 
-    // Set Category ID
+    /**
+     * This method will validate that the category id is greater than 0
+     * @param categoryId
+     */
     public void setCategoryId(int categoryId) {
         if (categoryId > 0){
             this.categoryId = categoryId;
@@ -31,13 +38,16 @@ public class Category {
         return categoryName;
     }
 
-    // Set Category Name
+    /**
+     * This method will valid that the category name is not empty and also has at least 2 characters
+     * @param categoryName
+     */
     public void setCategoryName(String categoryName) {
-        if (categoryName.length() > 1 && !categoryName.isBlank()) {
+        if (categoryName.length() > 2 && !categoryName.isBlank()) {
             this.categoryName = categoryName;
         }
         else {
-            throw new IllegalArgumentException("the category name cannot be empty and must contain characters more 1");
+            throw new IllegalArgumentException("the category name cannot be empty and must contain characters more 2");
         }
     }
 }
